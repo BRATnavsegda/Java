@@ -1,14 +1,13 @@
 package Homework1;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class homework1 {
     public static void main(String[] args) {
-        // task1();
-        // 
-        task3();
+        
+        lets_go();
+
     }
 
     public static void task1() {
@@ -22,7 +21,7 @@ public class homework1 {
             res += i;
         }
         System.out.println(res);
-        input.close();
+        // input.close();
     }
 
     public static void task2() {
@@ -36,7 +35,7 @@ public class homework1 {
             res *= i;
         }
         System.out.println(res);
-        input.close();
+        // input.close();
     }
 
     public static void task3() {
@@ -47,16 +46,20 @@ public class homework1 {
                 Чтобы найти остаток от деления используйте оператор % , например 10%3 будет
                 равно единице)\n""");
         ArrayList<Integer> res = new ArrayList<Integer>();
-        
-        for (int i = 2; i <= 1000; i++) {
-            if (i % i == 0) {
-                break;
+
+        boolean b = true;
+        for (int j = 2; j <= 1000; j++) {
+            for (int i = 2; i < j; i++) {
+                if (j % i == 0) {
+                    b = false;
+                    break;
+                }
             }
-            else {
-                res.add(i);
-            } 
+            if (b)
+                res.add(j);
+            else
+                b = true;
         }
-        
 
         for (Integer person : res) {
 
@@ -64,6 +67,91 @@ public class homework1 {
         }
     }
 
+    public static void task4() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Задача №4:\nРеализовать простой калькулятор ");
+
+        System.out.println("Введите первое число: ");
+        int num1 = input.nextInt();
+
+        System.out.println("Введите второе число: ");
+        int num2 = input.nextInt();
+
+        System.out.println("""
+                Укажите операцию, которую надо выполнить с этими числами,
+                введите цифру которая соответствует нужно операции:
+                1 - для прибавления(+) ;
+                2 - для вычитания(-) ;
+                3 - для умножения(*) ;
+                4 - для деления(/) .
+                """);
+
+        int operator = input.nextInt();
+        int res = 0;
+        if (operator == 1) {
+            res = num1 + num2;
+            System.out.println(res);
+        } else if (operator == 2) {
+            res = num1 - num2;
+            System.out.println(res);
+        } else if (operator == 3) {
+            res = num1 * num2;
+            System.out.println(res);
+        } else if (operator == 4) {
+            if (num2 == 0) {
+                System.out.println("Нельзя делить на ноль!!!");
+            } else {
+                res = num1 / num2;
+                System.out.println(res);
+            }
+
+        }
+        // input.close();
+    }
+
+
+ public static void lets_go() {
+    Scanner input = new Scanner(System.in);
+        while (true) {
+
+            System.out.println("""
+                    \n\nДоброго времени суток!!!\n
+                    Выберите задачу для проверки:\n
+                    \t1) Вычислить n-ое треугольного число(сумма чисел от 1 до n)
+                    \t2) Вычислить n! (произведение чисел от 1 до n)
+                    \t3) Вывести все простые числа от 1 до 1000 (простые числа - это числа которые
+                    \tделятся только на себя и на единицу без остатка.
+                    \tЧтобы найти остаток от деления используйте оператор % , например 10%3 будет
+                    \tравно единице)
+                    \t4) Реализовать простой калькулятор.
+                    \n>>>> Для выхода введите: 0 <<<<
+                    \nвведите номер задачи от 1 до 4 для проверки:
+
+                    """);
+            int number = input.nextInt();
+           
+            if (number == 1) {
+                task1();
+            } else if (number == 2) {
+                task2();
+            } else if (number == 3) {
+                task3();
+            } else if (number == 4) {
+                task4();
+            } else if (number == 0) {
+                System.out.println("""
+                    \nАнекдот напоследок: \n\n
+                1 монитор - обычный программист, 2 монитора - продвинутый программист, \n
+                3 монитора - системный программист, 4 монитора - охранник.\n
+                """);
+                input.close();
+                break;
+            }
+            else {
+                System.out.println("Введите !правильный! номер (от 1 до 4), попробуйте ещё раз...");
+            }
+        }
+}
 }
 
 /*

@@ -1,10 +1,12 @@
-<<<<<<< HEAD
 package Seminar1;
 
-public class sem1 {
-    public static void main(String[] args) {
+// public class sem1 {
+//     public static void main(String[] args) {
         
-    }
+//     }
+
+    // public sem1() {
+    // }
 
     // System.out.println("Как тебя зовут?");
     //     Scanner scanner = new Scanner(System.in);
@@ -81,8 +83,7 @@ public class sem1 {
     // }
 
 
-}
-=======
+// }
 /*
 Р’ РєРѕРЅСЃРѕР»Рё Р·Р°РїСЂРѕСЃРёС‚СЊ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ. Р’ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РµРєСѓС‰РµРіРѕ РІСЂРµРјРµРЅРё, РІС‹РІРµСЃС‚Рё РїСЂРёРІРµС‚СЃС‚РІРёРµ РІРёРґР°
 "Р”РѕР±СЂРѕРµ СѓС‚СЂРѕ, <РРјСЏ>!", РµСЃР»Рё РІСЂРµРјСЏ РѕС‚ 05:00 РґРѕ 11:59
@@ -160,6 +161,7 @@ public class sem1 {
          }
  
          System.out.println(res + name);
+         scanner.close();
      }
      public static int ex2(int[] arr){
          int maxCount = 0;
@@ -218,4 +220,3 @@ public class sem1 {
          return res;
      }
  }
->>>>>>> 6a5eaf6f41eeec228add4afb9545e1982e9e2819
